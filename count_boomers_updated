@@ -1,0 +1,14 @@
+boomerlst = list(input('Type in here a sequence of numbers: '))
+
+def count_boomerangs(lst):
+    boomerCount = 0 #empty var tracker 
+    for i,value in enumerate(lst):
+        if int(i) == len(lst)-2:
+            return boomerCount
+        elif lst[int(i)] == lst[int(i)+2] and lst[int(i)] != lst[int(i)+1]:
+            boomerCount += 1    
+    return boomerCount
+
+print(str(boomerlst)+ ' has ' + str(count_boomerangs(boomerlst)) + ' boomerangs.')
+
+#It works. The while was the problem after all
